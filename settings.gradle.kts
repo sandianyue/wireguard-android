@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -16,5 +18,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "wireguard-android"
 
-include ':tunnel'
-include ':ui'
+include(":tunnel")
+include(":ui")
