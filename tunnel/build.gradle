@@ -1,9 +1,9 @@
 plugins {
-    id 'com.android.library'
+    alias(libs.plugins.android.library)
 }
 
 version wireguardVersionName
-group groupName
+group = GROUP
 
 android {
     compileSdk 33
@@ -32,14 +32,14 @@ android {
         release {
             externalNativeBuild {
                 cmake {
-                    arguments "-DANDROID_PACKAGE_NAME=${groupName}", "-DGRADLE_USER_HOME=${project.gradle.gradleUserHomeDir}"
+                    arguments "-DANDROID_PACKAGE_NAME=${GROUP}", "-DGRADLE_USER_HOME=${project.gradle.gradleUserHomeDir}"
                 }
             }
         }
         debug {
             externalNativeBuild {
                 cmake {
-                    arguments "-DANDROID_PACKAGE_NAME=${groupName}.debug", "-DGRADLE_USER_HOME=${project.gradle.gradleUserHomeDir}"
+                    arguments "-DANDROID_PACKAGE_NAME=${GROUP}.debug", "-DGRADLE_USER_HOME=${project.gradle.gradleUserHomeDir}"
                 }
             }
         }
@@ -50,10 +50,10 @@ android {
 }
 
 dependencies {
-    implementation "androidx.annotation:annotation:$annotationsVersion"
-    implementation "androidx.collection:collection:$collectionVersion"
-    compileOnly "com.google.code.findbugs:jsr305:$jsr305Version"
-    testImplementation "junit:junit:$junitVersion"
+    implementation libs.androidx.annotation
+    implementation libs.androidx.collection
+    compileOnly libs.jsr305
+    testImplementation libs.junit
 }
 
 apply from: "publish.gradle"

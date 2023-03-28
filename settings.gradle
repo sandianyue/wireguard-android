@@ -1,16 +1,8 @@
 pluginManagement {
-    def agpVersion = '7.4.2'
-    def kotlinVersion = "1.8.0"
     repositories {
         gradlePluginPortal()
         google()
         mavenCentral()
-    }
-    plugins {
-        id("com.android.application") version "$agpVersion"
-        id("com.android.library") version "$agpVersion"
-        id("org.jetbrains.kotlin.android") version "$kotlinVersion"
-        id("org.jetbrains.kotlin.kapt") version "$kotlinVersion"
     }
 }
 
