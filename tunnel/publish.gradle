@@ -7,7 +7,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = GROUP
                 artifactId = 'tunnel'
-                version wireguardVersionName
+                version = wireguardVersionName
 
                 artifact sourcesJar
                 artifact javadocJar
